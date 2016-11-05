@@ -25,4 +25,7 @@ adjacent(stuttgart, munich).
 
 /* insert your clauses here */
 
+adjacent_(X, Y) :- adjacent(Y, X); adjacent(X, Y).
+connected(X, Y) :- adjacent_(X, Y).
+connected(X, Y) :- adjacent_(X, Z), adjacent_(Y, Z). 
 
